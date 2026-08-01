@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: laravel_outbound
+      POSTGRES_USER: laravel
+      POSTGRES_PASSWORD: laravel
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U laravel -d laravel_outbound"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      args:
+        COMPOSER_FLAGS: "--prefer-dist"
+    ports:
+      - "8001:8000"
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8000
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_DATABASE: laravel_outbound
+      DB_USERNAME: laravel
+      DB_PASSWORD: laravel
+      SESSION_DRIVER: file
+      CACHE_STORE: file
+      QUEUE_CONNECTION: sync
+      OUTBOUND_MODE: mock
+      OUTBOUND_URL: mock://laravel-outbound/notify
+      OUTBOUND_TIMEOUT_MS: "5000"
+      PORT: "8000"
+    depends_on:
+      db:
+        condition: service_healthy

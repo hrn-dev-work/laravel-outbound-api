@@ -1,0 +1,23 @@
+<?php
+
+namespace Tests;
+
+use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
+{
+    public function createApplication()
+    {
+        $env = dirname(__DIR__).'/.env';
+        if (! is_file($env)) {
+            file_put_contents($env, "\n");
+        }
+
+        $app = require Application::inferBasePath().'/bootstrap/app.php';
+        $app->make(Kernel::class)->bootstrap();
+
+        return $app;
+    }
+}

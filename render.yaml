@@ -1,0 +1,44 @@
+# Render Blueprint — S2 Laravel outbound API (free web + Postgres).
+# Docs: docs/en/deploy-render.md
+
+databases:
+  - name: laravel-outbound-db
+    plan: free
+    databaseName: laravel_outbound
+    user: laravel_outbound
+
+services:
+  - type: web
+    name: laravel-outbound-api
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: SESSION_DRIVER
+        value: file
+      - key: CACHE_STORE
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: OUTBOUND_MODE
+        value: mock
+      - key: OUTBOUND_URL
+        value: mock://laravel-outbound/notify
+      - key: OUTBOUND_TIMEOUT_MS
+        value: "5000"
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: laravel-outbound-db
+          property: connectionString
