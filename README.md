@@ -13,7 +13,7 @@ Aligned with Research card **S2**:
 | Public API | [https://laravel-outbound-api.onrender.com](https://laravel-outbound-api.onrender.com) — health verified; deploy: [docs/en/deploy-render.md](./docs/en/deploy-render.md) |
 
 Japanese: see below.  
-Agent glossary: [CONTEXT.md](./CONTEXT.md)
+Why this repo: [docs/en/purpose.md](./docs/en/purpose.md) · Agent glossary: [CONTEXT.md](./CONTEXT.md)
 
 Local (Docker): `http://localhost:8001/api/v1/health` · Hosted: [https://laravel-outbound-api.onrender.com/api/v1/health](https://laravel-outbound-api.onrender.com/api/v1/health)
 
@@ -94,7 +94,7 @@ outbound 連携モジュール（既定はモック）+ 呼び出し記録 + PHP
 | 公開 API | [https://laravel-outbound-api.onrender.com](https://laravel-outbound-api.onrender.com) — [docs/ja/deploy-render.md](./docs/ja/deploy-render.md) |
 
 English: see above.  
-用語: [CONTEXT.md](./CONTEXT.md)
+目的: [docs/ja/purpose.md](./docs/ja/purpose.md) · 用語: [CONTEXT.md](./CONTEXT.md)
 
 ローカル（Docker）: `http://localhost:8001/api/v1/health` · ホスト: [https://laravel-outbound-api.onrender.com/api/v1/health](https://laravel-outbound-api.onrender.com/api/v1/health)
 

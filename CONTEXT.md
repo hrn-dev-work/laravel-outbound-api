@@ -2,6 +2,8 @@
 
 Portfolio sample **S2**: Laravel outbound integration module (mock upstream by default).
 
+**Why (human):** [docs/en/purpose.md](docs/en/purpose.md) · [docs/ja/purpose.md](docs/ja/purpose.md) — freelance proposal proof, not a SaaS product.
+
 ## Domain glossary
 
 | Term | Meaning |

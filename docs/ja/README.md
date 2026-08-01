@@ -7,6 +7,8 @@
 
 同一ファイルに英語と日本語を混ぜないでください（ルート `README.md` のみ上=英語・下=日本語の例外）。方針: `docs-language` スキル（`~/.cursor/skills/docs-language`）。
 
+- [目的（なぜこのリポか）](./purpose.md) — ポートフォリオ目的・デモ手順・非目標
 - [はじめに](./getting-started.md) — このアプリリポでの最初の 1 時間
+- [Render デプロイ](./deploy-render.md) — S2 公開 API（Blueprint）
 - [ローカル DB（Docker）](./local-database.md) — Postgres はホストではなく Compose 上
 - [レビュー](./reviews.md) — implementation-review（7段階）とレポート場所
