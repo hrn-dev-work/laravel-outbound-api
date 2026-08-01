@@ -20,6 +20,9 @@ export BASE_URL="https://laravel-outbound-api.onrender.com"
 bash scripts/smoke.sh
 ```
 
+**S2 status (2026-08-01):** Live URL above; hosted smoke (health + notify + outbound list) verified. README DoD Public URL = **Yes**.
+
 ## Limits
 
-Free web cold starts; free Postgres expires ~30 days.
+Free web cold starts; free Postgres expires ~30 days.  
+Workspace free Postgres is **one at a time** — deploying this sample may require deleting another free DB (e.g. S1 `ops-inbox-db`).

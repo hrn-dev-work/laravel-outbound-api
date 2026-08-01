@@ -10,11 +10,12 @@ outbound 連携モジュール（既定はモック）+ 呼び出し記録 + PHP
 | スタック | Laravel 12 · PostgreSQL 16 · PHPUnit（[ADR 0001](./docs/adr/0001-laravel-postgres-api.md)） |
 | 課題 | 本番キーなしで「外部 API を叩く」を証明したい |
 | 結果 | モック outbound + `outbound_calls` 保存 + health + Docker/Render |
+| 公開 API | [https://laravel-outbound-api.onrender.com](https://laravel-outbound-api.onrender.com) — [docs/ja/deploy-render.md](./docs/ja/deploy-render.md) |
 
 English: [README.md](./README.md)  
 用語: [CONTEXT.md](./CONTEXT.md)
 
-ローカル（Docker）: `http://localhost:8001/api/v1/health`
+ローカル（Docker）: `http://localhost:8001/api/v1/health` · ホスト: [https://laravel-outbound-api.onrender.com/api/v1/health](https://laravel-outbound-api.onrender.com/api/v1/health)
 
 ---
 
@@ -64,9 +65,9 @@ docker compose exec api php artisan test
 
 | 項目 | 状態 |
 |------|------|
-| Smoke / テスト緑 | Yes（ローカル Docker: PHPUnit + smoke） |
+| Smoke / テスト緑 | Yes（ローカル Docker + ホスト smoke） |
 | README ケース | あり |
-| 公開 URL 一式 | GitHub + Render 待ち |
+| 公開 URL 一式 | Yes — [https://laravel-outbound-api.onrender.com](https://laravel-outbound-api.onrender.com) · [GitHub](https://github.com/hrn-dev-work/laravel-outbound-api) |
 
 ---
 

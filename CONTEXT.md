@@ -18,9 +18,9 @@ Portfolio sample **S2**: Laravel outbound integration module (mock upstream by d
 | DB | PostgreSQL 16 via Docker Compose `db` |
 | API | REST `/api/v1` |
 | Tests | PHPUnit feature tests |
-| Hosting | Render Blueprint (Docker) + GitHub |
+| Hosting | Render Blueprint (Docker) + GitHub · live `https://laravel-outbound-api.onrender.com` (hosted smoke verified 2026-08-01) |
 
-**Ports:** API `8000` · Postgres `5432` · Health `GET /api/v1/health`
+**Ports:** API `8000` (Compose host map `8001`) · Postgres `5432` (host map `5433`) · Health `GET /api/v1/health`
 
 Layout: Laravel `app/` · `routes/api.php` · `database/migrations/` · `docs/` · `scripts/smoke.sh`
 

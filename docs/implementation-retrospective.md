@@ -21,3 +21,15 @@
 ---
 
 <!-- 以下、新しいエントリをこの行の上に追加 -->
+
+### 2026-08-01 — S2 公開 API（Render）と DoD クローズ
+
+- **変更**: Laravel outbound mock API · Docker Compose · Render Blueprint · README DoD Yes
+- **根拠**:
+  - ホスト `GET /api/v1/health` → `database: up`
+  - `BASE_URL=https://laravel-outbound-api.onrender.com` で `scripts/smoke.sh` 成功（notify + outbound list）
+  - GitHub: https://github.com/hrn-dev-work/laravel-outbound-api
+- **良かった点**: 無料 Postgres 1枠制約を把握し S1 DB と入れ替えてデプロイ
+- **改善点**: イメージ内 `.env` / sqlite ファイルが HTTP 側の DB 接続を狂わせた → start で削除する運用に固定
+- **ルール更新**: 無（S1 の atomic DoD / publish 除外を再利用）
+- **次回テスト**: ホスト再デプロイ後は必ず smoke；無料 DB 入れ替え時は他サンプルの health も確認
