@@ -1,6 +1,6 @@
 # Skill set (agents)
 
-English. Human tables: both halves of `README.md` (EN top / JA bottom).
+English. Human tables: `README.md` (English) and `README.ja.md` (Japanese).
 
 | Area | In this sample |
 |------|----------------|
