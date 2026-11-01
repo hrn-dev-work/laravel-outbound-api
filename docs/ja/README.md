@@ -5,7 +5,7 @@
 エージェント向け（`CONTEXT.md`、`docs/agents/`、`docs/adr/`、Cursor rules/skills）は **英語のみ**です。  
 英語の人向けガイド: `docs/en/`。
 
-同一ファイルに英語と日本語を混ぜないでください。ルートは `README.md` が英語、`README.ja.md` が日本語で、両方の冒頭に言語切り替えリンクを置きます。方針: `docs-language` スキル（`~/.cursor/skills/docs-language`）。
+同一ファイルに英語と日本語を混ぜないでください。ルートは `README.md` が日本語、`README.en.md` が英語で、両方の冒頭に言語切り替えリンクを置きます。方針: `docs-language` スキル（`~/.cursor/skills/docs-language`）。
 
 - [目的（なぜこのリポか）](./purpose.md) — ポートフォリオ目的・デモ手順・非目標
 - [はじめに](./getting-started.md) — このアプリリポでの最初の 1 時間
